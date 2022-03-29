@@ -8,6 +8,7 @@
     --blanco: #ffffff;
     --negro: #000000; 
     --gris: #28282c;
+    --aviso:  #943126 ;
 
 }
 
@@ -436,12 +437,12 @@ h3, h4, h5{
 }
 
 .usuario-error{
-    color: red;
+    color: var(--aviso);
     grid-column: 1 / 3;
 }
 
 .contraseña-error{
-    color: red;
+    color: var(--aviso);
     grid-column: 1 / 3;
 }
 
@@ -450,11 +451,59 @@ h3, h4, h5{
 }
 
 .confirmar-contraseña-error{
-    color: red;
+    color: var(--aviso);
     grid-column: 1 / 3;
 }
 
 .correo-error{
-    color: red;
+    color: var(--aviso);
     grid-column: 1 / 3;
+}
+
+.bienvenida{
+    background-color: var(--aviso);
+    border-radius: 5rem;
+}
+
+.bienvenida-usuario{
+    color: var(--blanco);
+}
+
+.perfil{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+}
+
+.perfil :hover{
+    cursor: pointer;
+    color: var(--enlace);
+}
+
+.perfil-imagen{
+    width: 10%;
+    background-color: var(--blanco);
+    border-radius: 6rem;
+    margin-right: 1rem;
+}
+
+.perfil-usuario{
+    
+    color: var(--blanco);
+}
+
+@media(min-width: 768px){
+    .perfil{
+        display: block;
+    }
+    .perfil-imagen{
+        width: 5%;
+        margin-bottom: 0;
+    }
+    
+    .perfil-usuario{
+        margin: 0;
+        padding: 0;
+    }
 }

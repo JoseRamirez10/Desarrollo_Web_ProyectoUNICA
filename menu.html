@@ -8,18 +8,20 @@
     <link rel="stylesheet" href="src/css/style.css">
     <title>Menu</title>
 </head>
-<?php
-    //include "src/php/validarUsuario.php";
-?>
 <body onload="cargarCarrusel()">
     <header>
+        <div class="bienvenida"></div>
         <h1>Assasin's Creed</h1>
+        <div class="perfil">
+            <img class="perfil-imagen" src="src/img/perfil.png">
+            <p class="perfil-usuario"></p>
+        </div>
     </header>
     <!-- Menu de navegacion -->
     <nav>
         <div class="nav-fondo">
             <ul class="nav-enlace">
-                <li><a href="menu.php">Menu</a></li>
+                <li><a href="menu.html">Menu</a></li>
                 <li><a href="principal.html">Principal</a></li>
                 <li><a href="nosotros.html">Nosotros</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
@@ -51,6 +53,7 @@
     </footer>
 </body>
 <script src="src/js/Menu.js"></script>
+<script src="src/js/perfil.js"></script>
 <script 
     src="https://code.jquery.com/jquery-3.6.0.js" 
     integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" 

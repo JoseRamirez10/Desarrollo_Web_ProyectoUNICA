@@ -15,7 +15,10 @@ document.addEventListener('DOMContentLoaded',function(){
                     }else if(response == "Contraseña incorrecta"){
                         contraseñaIncorrecta();
                     }else{
-                        window.open('menu.php',"_self");
+                        bienvenida = false;
+                        localStorage.setItem("usuario", response);
+                        localStorage.setItem("bienvenida",bienvenida);
+                        window.open('menu.html',"_self");
                     }
                 }
             });
