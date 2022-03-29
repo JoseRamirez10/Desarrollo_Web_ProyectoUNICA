@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="src/img/faviconMenu.png"/>
+    <link rel="stylesheet" href="src/css/style.css">
+    <title>Menu</title>
+</head>
+<?php
+    //include "src/php/validarUsuario.php";
+?>
+<body onload="cargarCarrusel()">
+    <header>
+        <h1>Assasin's Creed</h1>
+    </header>
+    <!-- Menu de navegacion -->
+    <nav>
+        <div class="nav-fondo">
+            <ul class="nav-enlace">
+                <li><a href="menu.php">Menu</a></li>
+                <li><a href="principal.html">Principal</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Titulo -->
+    <header>
+        <h2>Ezio Auditore</h2>
+    </header>
+    <!-- Carrusel -->
+    <div class="carrusel">
+        <div class="carrusel-imagen"></div>
+    </div>
+    <footer>
+        <div class="footer">
+            <div class="footer-nav">
+                <nav class="nav">
+                    <a class="footer-enlace" href="./nosotros.html">Nosotros</a>
+                    <a class="footer-enlace" href="./contacto.html">Contacto</a>
+                </nav>
+                <div class="footer-redes">
+                    <a href="#"><img class="footer-icon" src="/src/img/facebook.png""></a>
+                    <a href="#"><img class="footer-icon" src="/src/img/instagram.png"></a>
+                </div>
+            </div>
+            <p>Todos los Derechos Reservados 2022 &copy;</p>
+        </div>
+    </footer>
+</body>
+<script src="src/js/Menu.js"></script>
+<script 
+    src="https://code.jquery.com/jquery-3.6.0.js" 
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" 
+    crossorigin="anonymous">
+</script>
+</html>

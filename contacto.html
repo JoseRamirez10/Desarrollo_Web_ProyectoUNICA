@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="src/img/faviconContacto.png"/>
+    <link rel="stylesheet" href="src/css/style.css">
+    <title>Contacto</title>
+</head>
+<body>
+    <header>
+        <h1>Assasin's Creed</h1>
+    </header>
+    <nav>
+        <div class="nav-fondo">
+            <ul class="nav-enlace">
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="principal.html">Principal</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+    <form class="contacto">
+        <fieldset>
+            <legend>Ponte en contacto con nosotros</legend>
+
+            <div class="contenedor-input">
+                <div class="input">
+                    <label>Nombre</label>
+                    <input id="nombre" class="input-mensaje" type="text" placeholder="Ingresa tu nombre...">
+                </div>
+                <div class="input">
+                    <label>Telefono</label>
+                    <input id="telefono" class="input-mensaje" type="tel" placeholder="Número de teléfono...">
+                </div>
+                <div class="input">
+                    <label>Correo</label>
+                    <input id="email" class="input-mensaje" type="email" placeholder="Correo eléctronico...">
+                </div>
+                <div class="input">
+                    <label>Mensaje</label>
+                    <input id="mensaje" class="mensaje" type="text" placeholder="Escribe un mensaje...">
+                </div>
+                
+            </div>
+            <input type="button" class="contacto-boton" onclick="enviar()" value="Enviar" >
+        </fieldset>
+    </form>
+    <footer>
+        <div class="footer">
+            <div class="footer-nav">
+                <nav class="nav">
+                    <a class="footer-enlace" href="./nosotros.html">Nosotros</a>
+                    <a class="footer-enlace" href="./contacto.html">Contacto</a>
+                </nav>
+                <div class="footer-redes">
+                    <a href="#"><img class="footer-icon" src="/src/img/facebook.png""></a>
+                    <a href="#"><img class="footer-icon" src="/src/img/instagram.png"></a>
+                </div>
+            </div>
+            <p>Todos los Derechos Reservados 2022 &copy;</p>
+        </div>
+    </footer>
+</body>
+<script src="src/js/contacto.js"></script>
+</html>
