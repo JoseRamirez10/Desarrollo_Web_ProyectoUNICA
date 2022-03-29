@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="src/img/faviconNosotros.png"/>
+    <link rel="stylesheet" href="src/css/style.css">
+    <title>Mi Perfil</title>
+</head>
+<body>
+    <header>
+        <h1>Assasin's Creed</h1>
+    </header>
+    <nav>
+        <div class="nav-fondo">
+            <ul class="nav-enlace">
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="principal.html">Principal</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+    <form class="perfil-form">
+        <fieldset>
+            <legend>Informacion de perfil</legend>
+            <hr>
+            <div class="perfil-form-contenedor">
+                <div class="perfil-input">
+                    <label>Nombre</label>
+                    <input id="nombre" class="perfil-nombre" type="text" disabled>
+                </div>
+                <div class="perfil-input">
+                    <label>Contraseña</label>
+                    <input id="contraseña" class="perfil-contraseña" type="password" disabled>
+                </div>
+                <div class="perfil-input">
+                    <label>Email</label>
+                    <input id="email" class="perfil-email" type="email" disabled>
+                </div>
+                <div class="perfil-input">
+                    <label>Fecha de nacimiento</label>
+                    <input class="perfil-fecha" type="text" name="fecha" disabled>
+                </div>
+                <div class="perfil-input">
+                    <label>Pais</label>
+                    <input id="mensaje" class="perfil-pais" type="text" disabled>
+                </div>
+            </div>
+            <input class="boton-ingreso" type="submit" name="enviar" value="Actualizar informacion">
+        </fieldset>
+    </form>
+    <footer>
+        <div class="footer">
+            <div class="footer-nav">
+                <nav class="nav">
+                    <a class="footer-enlace" href="./nosotros.html">Nosotros</a>
+                    <a class="footer-enlace" href="./contacto.html">Contacto</a>
+                </nav>
+                <div class="footer-redes">
+                    <a href="#"><img class="footer-icon" src="/src/img/facebook.png""></a>
+                    <a href="#"><img class="footer-icon" src="/src/img/instagram.png"></a>
+                </div>
+            </div>
+            <p>Todos los Derechos Reservados 2022 &copy;</p>
+        </div>
+    </footer>
+    
+</body>
+<script src="src/js/leer.js"></script>
+<script 
+    src="https://code.jquery.com/jquery-3.6.0.js" 
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" 
+    crossorigin="anonymous">
+</script>
+</html>

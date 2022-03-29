@@ -2,6 +2,23 @@ const user = document.querySelector('.entrada-usuario');
 const pass = document.querySelector('.entrada-contraseña');
 
 document.addEventListener('DOMContentLoaded',function(){
+
+    let campo = true;
+    localStorage.setItem('registro', campo);
+
+    let registro = localStorage.getItem('registro');
+    if(registro){
+        let notificacion = document.querySelector('.registro');
+        let mensaje = document.createElement('P');
+        mensaje.textContent = "Registrado correctamente";
+        mensaje.classList.add('registro-mensaje');
+        notificacion.appendChild(mensaje);
+        setTimeout(function(){
+            notificacion.removeChild(mensaje);
+        }, 1500);
+    }
+    console.log("Hola");
+
     $('#form1').submit(function(e){
         if(validar(e)){
             e.preventDefault();

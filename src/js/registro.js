@@ -19,7 +19,9 @@ document.addEventListener('DOMContentLoaded',function(){
                         console.log(response);
                     }
                     else{
-                        console.log(response);
+                        window.open('index.php',"_self");
+                        let registro = true;
+                        localStorage.getItem('registro',registro);
                     }
                 }
             });
