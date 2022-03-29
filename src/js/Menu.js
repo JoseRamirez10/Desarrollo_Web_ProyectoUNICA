@@ -1,5 +1,29 @@
-function cargarCarrusel(){
+function bienvenida(){
+    let bienvenida = localStorage.getItem('bienvenida');
+    const usuario = localStorage.getItem('usuario');
+    if(bienvenida == "false"){
+        colocarBienvenida(usuario);
+        bienvenida = true;
+        localStorage.setItem('bienvenida', bienvenida);
+    }
+}
 
+function colocarBienvenida(usuario){
+    let divBienvenida = document.querySelector(".bienvenida");
+    let bienvenida = document.createElement('h1');
+    bienvenida.textContent = "¡Bienvenido "+usuario+"!";
+    bienvenida.classList.add("bienvenida-usuario");
+    divBienvenida.appendChild(bienvenida);
+
+    setTimeout(function(){
+        divBienvenida.removeChild(bienvenida);
+    }, 1500);
+
+}
+
+
+function cargarCarrusel(){
+    bienvenida();
     $.ajax({
         type: "POST",
         url: 'src/php/carrusel.php',
