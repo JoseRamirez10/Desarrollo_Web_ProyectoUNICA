@@ -33,6 +33,7 @@
             </div>
             <input class="boton-ingreso" type="submit" name="enviar" value="Ingresar">
         </fieldset>
+        <div class="registro"></div>
         <img src="src/img/logo.jpg" class="acceso-imagen">
     </form>
     

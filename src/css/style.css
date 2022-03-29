@@ -236,6 +236,7 @@ footer{
     display: flex;
     flex-direction: column;
 }
+
 .nosotros-contenedor-imagen{
     display:flex;
     justify-content: center;
@@ -334,6 +335,48 @@ footer{
     .input:nth-child(4){
         grid-column: 1 / 3 ;
     }
+}
+/* Perfil */
+.perfil-form{
+    margin: 0 auto;
+    margin-top: 2rem;
+    background-color: var(--gris);
+    border-radius: 1rem;
+    text-align: center;
+    color: var(--enlace);
+    font-weight: 700;
+}
+
+.perfil-form fieldset{
+    border: none;
+}
+
+.perfil-form legend{
+    font-size: 4rem;
+    padding-top:1rem;
+}
+
+.perfil-input label{
+    display: block;
+    text-align: left;
+}
+.perfil-input input{
+    width: 100%;
+    background-color: var(--blanco);
+    border-radius: 0.5rem;
+}
+
+@media(min-width: 768px){
+    .perfil-form{
+        width: 60rem;
+    }
+    .perfil-input{
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        margin-top: 2rem;
+        padding: 0 2rem;
+    }
+    
 }
 
 /* Principal */
@@ -506,4 +549,15 @@ h3, h4, h5{
         margin: 0;
         padding: 0;
     }
+}
+
+.registro{
+    background-color: var(--aviso);
+    margin: 3rem 0;
+    width: 100%;
+    border-radius: 5rem;
+}
+
+.registro-mensaje{
+    color: var(--blanco);
 }
