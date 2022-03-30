@@ -79,8 +79,8 @@
                     <a class="footer-enlace" href="./contacto.html">Contacto</a>
                 </nav>
                 <div class="footer-redes">
-                    <a href="#"><img class="footer-icon" src="/src/img/facebook.png""></a>
-                    <a href="#"><img class="footer-icon" src="/src/img/instagram.png"></a>
+                    <a href="#"><img class="footer-icon" src="src/img/facebook.png""></a>
+                    <a href="#"><img class="footer-icon" src="src/img/instagram.png"></a>
                 </div>
             </div>
             <p>Todos los Derechos Reservados 2022 &copy;</p>
