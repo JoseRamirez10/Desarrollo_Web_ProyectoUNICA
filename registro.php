@@ -65,8 +65,6 @@
                     <input class="entrada-recibir" type="checkbox" name="recibir" placeholder="Recibir">
                 </div>
             </div>
-            <!-- <input type="button" class="boton-ingreso" onclick="ingresar()" value="Ingresar">
-            -->
             <input class="boton-ingreso" type="submit" name="enviar" value="Registrar">
         </fieldset>
         <img src="src/img/logo.jpg" class="registro-imagen">
