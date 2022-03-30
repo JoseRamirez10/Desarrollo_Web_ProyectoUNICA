@@ -8,7 +8,7 @@
     --blanco: #ffffff;
     --negro: #000000; 
     --gris: #28282c;
-    --aviso:  #943126 ;
+    --aviso:  #E74C3C  ;
 
 }
 
@@ -656,7 +656,22 @@ h3, h4, h5{
 
     .formulario-eliminar button{
         width: 30%;
-    }
-    
+    }   
+}
+
+.error{
+    color: var(--aviso);
+}
+
+.aviso-correcto{
+    background-color: green;
+    color: var(--blanco);
+    border-radius: 2rem;
+}
+
+.aviso-error{
+    background-color: red;
+    color: var(--blanco);
+    border-radius: 2rem;
 }
 

@@ -26,30 +26,30 @@
             </ul>
         </div>
     </nav>
-    <form class="contacto">
+    <form id="form-contacto" class="contacto">
         <fieldset>
             <legend>Ponte en contacto con nosotros</legend>
-
+            <div class="aviso"></div>
             <div class="contenedor-input">
                 <div class="input">
                     <label>Nombre</label>
-                    <input id="nombre" class="input-mensaje" type="text" placeholder="Ingresa tu nombre...">
+                    <input id="nombre" class="input-mensaje input-nombre" type="text" name="nombre" placeholder="Ingresa tu nombre...">
                 </div>
-                <div class="input">
+                <div class="input campo-telefono">
                     <label>Telefono</label>
-                    <input id="telefono" class="input-mensaje" type="tel" placeholder="Número de teléfono...">
+                    <input id="telefono" class="input-mensaje input-telefono" type="tel" name="telefono" size="10" placeholder="Número de teléfono...">
                 </div>
-                <div class="input">
+                <div class="input campo-email">
                     <label>Correo</label>
-                    <input id="email" class="input-mensaje" type="email" placeholder="Correo eléctronico...">
+                    <input id="email" class="input-mensaje input-email" type="email" name="email" placeholder="Correo eléctronico...">
                 </div>
                 <div class="input">
                     <label>Mensaje</label>
-                    <input id="mensaje" class="mensaje" type="text" placeholder="Escribe un mensaje...">
+                    <input id="mensaje" class="mensaje" type="text" name="mensaje" placeholder="Escribe un mensaje...">
                 </div>
                 
             </div>
-            <input type="button" class="contacto-boton" onclick="enviar()" value="Enviar" >
+            <input type="submit" class="contacto-boton" value="Enviar" >
         </fieldset>
     </form>
     <footer>
@@ -70,4 +70,9 @@
 </body>
 <script src="src/js/contacto.js"></script>
 <script src="src/js/perfil.js"></script>
+<script 
+    src="https://code.jquery.com/jquery-3.6.0.js" 
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" 
+    crossorigin="anonymous">
+</script>
 </html>
