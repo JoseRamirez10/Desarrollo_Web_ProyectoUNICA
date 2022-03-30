@@ -32,11 +32,11 @@
                 </div>
             </div>
             <input class="boton-ingreso" type="submit" name="enviar" value="Ingresar">
+            <p class="registrarse">¿No tienes una cuenta? <a href="registro.php">Registrate</a></p>
         </fieldset>
         <div class="registro"></div>
         <img src="src/img/logo.jpg" class="acceso-imagen">
     </form>
-    
     <footer>
         <p>Todos los Derechos Reservados 2022 &copy;</p>
     </footer>

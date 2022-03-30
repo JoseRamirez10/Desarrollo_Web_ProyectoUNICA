@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function(){
     perfil_usuario.textContent = usuario;
 
     perfil.onclick = function(){
-        window.open("perfil.html","_self");
+        window.open("perfil.php","_self");
     }
 
 });

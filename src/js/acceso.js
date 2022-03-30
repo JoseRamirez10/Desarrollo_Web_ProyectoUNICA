@@ -3,11 +3,8 @@ const pass = document.querySelector('.entrada-contraseña');
 
 document.addEventListener('DOMContentLoaded',function(){
 
-    let campo = true;
-    localStorage.setItem('registro', campo);
-
     let registro = localStorage.getItem('registro');
-    if(registro){
+    if(registro == "true"){
         let notificacion = document.querySelector('.registro');
         let mensaje = document.createElement('P');
         mensaje.textContent = "Registrado correctamente";
@@ -16,8 +13,9 @@ document.addEventListener('DOMContentLoaded',function(){
         setTimeout(function(){
             notificacion.removeChild(mensaje);
         }, 1500);
+        registro = false;
+        localStorage.setItem('registro', registro);
     }
-    console.log("Hola");
 
     $('#form1').submit(function(e){
         if(validar(e)){

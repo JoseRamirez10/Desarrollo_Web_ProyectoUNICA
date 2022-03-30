@@ -22,35 +22,55 @@
             </ul>
         </div>
     </nav>
-    <form class="perfil-form">
+    <form class="perfil-form" id="form-perfil">
         <fieldset>
             <legend>Informacion de perfil</legend>
             <hr>
             <div class="perfil-form-contenedor">
                 <div class="perfil-input">
+                    <label>Usuario</label>
+                    <input class="perfil-user" type="text" name="usuario" disabled>
+                </div>
+                <div class="perfil-input">
                     <label>Nombre</label>
-                    <input id="nombre" class="perfil-nombre" type="text" disabled>
+                    <input class="perfil-nombre" type="text" name="nombre" disabled>
+                    <button class="editar-nombre">Editar</button>
                 </div>
                 <div class="perfil-input">
                     <label>Contraseña</label>
-                    <input id="contraseña" class="perfil-contraseña" type="password" disabled>
+                    <input class="perfil-contraseña" type="password" name="contraseña" disabled>
+                    <button class="editar-contraseña">Editar</button>
                 </div>
-                <div class="perfil-input">
+                <div class="perfil-input editar-contraseña-confirmar">
+                </div>
+                <div class="perfil-input correo">
                     <label>Email</label>
-                    <input id="email" class="perfil-email" type="email" disabled>
+                    <input class="perfil-email" type="email" name="email" disabled>
+                    <button class="editar-email">Editar</button>
                 </div>
                 <div class="perfil-input">
                     <label>Fecha de nacimiento</label>
-                    <input class="perfil-fecha" type="text" name="fecha" disabled>
+                    <input class="perfil-fecha" type="date" name="fecha" disabled>
+                    <button class="editar-fecha">Editar</button>
                 </div>
                 <div class="perfil-input">
                     <label>Pais</label>
-                    <input id="mensaje" class="perfil-pais" type="text" disabled>
+                    <input class="perfil-pais" list="pais" name="pais" disabled>
+                    <datalist id="pais" class="datalist">
+                    </datalist>
+                    <button class="editar-pais">Editar</button>
                 </div>
             </div>
-            <input class="boton-ingreso" type="submit" name="enviar" value="Actualizar informacion">
+            <div class="botones-actualizar">
+                <input class="boton-ingreso boton-actualizar" type="submit" name="enviar" value="Actualizar informacion" disabled>
+            </div>
         </fieldset>
     </form>
+    <div class="botones-actualizar botones-extra">
+        <div class="boton-cancelar"></div>
+        <button class="boton-ingreso boton-eliminar">Eliminar perfil</button>
+    </div>
+    <form id="form-delete" class="formulario-eliminar"></form>
     <footer>
         <div class="footer">
             <div class="footer-nav">
@@ -69,6 +89,8 @@
     
 </body>
 <script src="src/js/leer.js"></script>
+<script src="src/js/actualizar.js"></script>
+<script src="src/js/eliminar.js"></script>
 <script 
     src="https://code.jquery.com/jquery-3.6.0.js" 
     integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" 
