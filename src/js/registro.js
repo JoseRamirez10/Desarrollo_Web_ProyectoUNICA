@@ -14,14 +14,12 @@ document.addEventListener('DOMContentLoaded',function(){
                 success: function(response){
                     if(response == "Correo invalido"){
                         correoInvalido();
-                    }
-                    if(response == "Usuario existente"){
+                    }else if(response == "Usuario existente"){
                         console.log(response);
-                    }
-                    else{
+                    }else{
+                        const registro = true;
+                        localStorage.setItem('registro',registro);
                         window.open('index.php',"_self");
-                        let registro = true;
-                        localStorage.getItem('registro',registro);
                     }
                 }
             });
@@ -46,16 +44,16 @@ function validar(e){
         fecha.length === 0  ||
         pais.length === 0
     ){
-        alert('Ingrese todos los campos solicitados');
         e.preventDefault();
+        alert('Ingrese todos los campos solicitados');
         return false;
     }else if (contraseña.value !== confirmarContraseña.value){
+        e.preventDefault();
         const confirmar = document.querySelector(".confirmar-contraseña");
         let aviso = document.createElement('P');
         aviso.textContent = " * Las contraseñas no coinciden";
         aviso.classList.add('confirmar-contraseña-error');
         confirmar.appendChild(aviso);
-        e.preventDefault();
         return false;
     }
     return true;

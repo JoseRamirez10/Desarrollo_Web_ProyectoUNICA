@@ -336,48 +336,6 @@ footer{
         grid-column: 1 / 3 ;
     }
 }
-/* Perfil */
-.perfil-form{
-    margin: 0 auto;
-    margin-top: 2rem;
-    background-color: var(--gris);
-    border-radius: 1rem;
-    text-align: center;
-    color: var(--enlace);
-    font-weight: 700;
-}
-
-.perfil-form fieldset{
-    border: none;
-}
-
-.perfil-form legend{
-    font-size: 4rem;
-    padding-top:1rem;
-}
-
-.perfil-input label{
-    display: block;
-    text-align: left;
-}
-.perfil-input input{
-    width: 100%;
-    background-color: var(--blanco);
-    border-radius: 0.5rem;
-}
-
-@media(min-width: 768px){
-    .perfil-form{
-        width: 60rem;
-    }
-    .perfil-input{
-        display: grid;
-        grid-template-columns: 1fr 3fr;
-        margin-top: 2rem;
-        padding: 0 2rem;
-    }
-    
-}
 
 /* Principal */
 .biografia{
@@ -532,7 +490,6 @@ h3, h4, h5{
 }
 
 .perfil-usuario{
-    
     color: var(--blanco);
 }
 
@@ -550,6 +507,18 @@ h3, h4, h5{
         padding: 0;
     }
 }
+.registrarse{
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.registrarse a{
+    color: var(--blanco);
+}
+.registrarse a:hover{
+    color: var(--enlace);
+    text-decoration-line: underline ;
+}
 
 .registro{
     background-color: var(--aviso);
@@ -561,3 +530,133 @@ h3, h4, h5{
 .registro-mensaje{
     color: var(--blanco);
 }
+
+.footer-registro{
+    background-color: var(--negro);
+    border-radius: 5rem;
+}
+
+.registro-imagen{
+    padding: 1rem;
+    height: 22rem;
+    width: 25rem;
+    border-radius: 10%;
+    margin-top: 1rem;
+}
+
+/* Perfil */
+.perfil-form{
+    margin: 0 auto;
+    margin-top: 2rem;
+    background-color: var(--gris);
+    border-radius: 1rem;
+    text-align: center;
+    color: var(--enlace);
+    font-weight: 700;
+}
+
+.perfil-form fieldset{
+    border: none;
+}
+
+.perfil-form legend{
+    font-size: 4rem;
+    padding-top:1rem;
+}
+
+.perfil-input label{
+    display: block;
+    text-align: left;
+}
+.perfil-input input{
+    width: 100%;
+    background-color: var(--blanco);
+    border-radius: 0.5rem;
+}
+
+.perfil-input button{
+    width: 100%;
+    background-color: var(--aviso);
+    border-radius: 5rem;
+    color: var(--enlace);
+}
+
+@media(min-width: 768px){
+    .perfil-form{
+        width: 80rem;
+    }
+    .perfil-input{
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+        margin-top: 2rem;
+        padding: 0 2rem;
+    }
+    .perfil-input input{
+        width: 95%;
+    }
+
+    .perfil-input button{
+        border-radius: 0.5rem;
+    }
+    
+}
+
+.botones-actualizar{
+    margin: 0 auto;   
+    display: flex;
+    flex-direction: column;
+}
+.boton-cancelar{
+    margin: 0 auto;
+}
+
+.formulario-eliminar{
+    margin: 0 auto;
+    margin-top: 2rem;
+    background-color: var(--gris);
+    border-radius: 1rem;
+    text-align: center;
+    color: var(--enlace);
+    font-weight: 700;
+}
+
+.formulario-eliminar legend{
+    font-size: 3rem;
+}
+
+.formulario-eliminar input{
+    width: 90%;
+}
+
+.formulario-eliminar button{
+    margin: 1rem;
+    border-radius: 0.5rem;
+    background-color: var(--aviso);
+    font-size: 2rem;
+    width: 90%;
+    color: var(--enlace);
+}
+
+
+@media(min-width: 768px){
+    .formulario-eliminar{
+        width: 80rem;
+    }
+    .campos-eliminar{ 
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+    }
+    .campos-eliminar input{
+        width: 70%;
+        margin: 1rem;
+    }
+
+    .formulario-eliminar button{
+        width: 30%;
+    }
+    
+}
+

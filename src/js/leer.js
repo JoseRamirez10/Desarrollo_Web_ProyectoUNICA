@@ -16,6 +16,8 @@ document.addEventListener('DOMContentLoaded',function(){
 });
 
 function imprimirDatos(datos){
+    let usuario = document.querySelector('.perfil-user');
+    usuario.value = datos[0]['usuario'];
     let nombre = document.querySelector('.perfil-nombre');
     nombre.value = datos[0]['nombre'];
     let contraseña = document.querySelector('.perfil-contraseña');

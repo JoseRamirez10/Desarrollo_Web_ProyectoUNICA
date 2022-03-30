@@ -13,7 +13,7 @@
 ?>
 <body>
     <header>
-        <h1>Acceso</h1>
+        <h1>Registro</h1>
     </header>
     <form class="acceso" id="form1" name="registro">
         <fieldset>
@@ -69,10 +69,10 @@
             -->
             <input class="boton-ingreso" type="submit" name="enviar" value="Registrar">
         </fieldset>
-        <img src="src/img/logo.jpg" class="acceso-imagen">
+        <img src="src/img/logo.jpg" class="registro-imagen">
     </form>
     
-    <footer>
+    <footer class="footer-registro">
         <p>Todos los Derechos Reservados 2022 &copy;</p>
     </footer>
 
