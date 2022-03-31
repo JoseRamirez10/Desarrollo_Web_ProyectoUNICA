@@ -26,7 +26,7 @@
                     <label>Nombre</label>
                     <input class="entrada-nombre" type="text" name="nombre" placeholder="Nombre Apellido">
                 </div>
-                <div class="campo">
+                <div class="campo registro-usuario">
                     <label>Usuario</label>
                     <input class="entrada-usuario" type="text" name="usuario" placeholder="Usuario">
                 </div>
@@ -51,6 +51,7 @@
                     <input class="entrada-pais" list="pais" name="pais" placeholder="Selecciona un pais">
                     <datalist id="pais">
                     <?php
+                        // Consulta de la base de datos para devolver un datalist de los paises que se pueden elegir
                         $sql = "SELECT * FROM pais";
                         $result = mysqli_query($con, $sql);
                         while($pais = mysqli_fetch_array($result)){

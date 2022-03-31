@@ -1,4 +1,7 @@
+// La primera vez que accede el usuario al menu
+// Se crea una notificacion de bienvenida
 function bienvenida(){
+    // Con la localStorage valida si es la primera vez que se accede a la pagina
     let bienvenida = localStorage.getItem('bienvenida');
     const usuario = localStorage.getItem('usuario');
     if(bienvenida == "false"){
@@ -8,6 +11,8 @@ function bienvenida(){
     }
 }
 
+// Crea la notifiacion de bienvenida
+// usando el nombre del usuario que da localStorage
 function colocarBienvenida(usuario){
     let divBienvenida = document.querySelector(".bienvenida");
     let bienvenida = document.createElement('h1');
@@ -17,22 +22,25 @@ function colocarBienvenida(usuario){
 
     setTimeout(function(){
         divBienvenida.removeChild(bienvenida);
-    }, 1500);
+    }, 1500); // El mensaje desaparece despues de un segundo y medio
 
 }
 
-
+// Crea un carrusel de imagenes en el body de la pagina
 function cargarCarrusel(){
-    bienvenida();
-    $.ajax({
+    bienvenida(); // Manda a llamar a la funcion de bienvenida
+    // Hace una solicitud a php usando ajax
+    // Si la solicitud es correcta devuelve en un json la ruta de las imagenes 
+    // que estan en la base de datos, y crea el carrusel
+    $.ajax({ 
         type: "POST",
         url: 'src/php/carrusel.php',
         success: function(response){
             if(!response){
                 console.log("error");
-            }else{
-                imagenes = JSON.parse(response);
-                iniciarCarrusel(imagenes);
+            }else{ 
+                imagenes = JSON.parse(response); // Recibe un json de las rutas de las imagenes
+                iniciarCarrusel(imagenes); // inicia el carrusel
             }
         }
     });
@@ -42,16 +50,6 @@ function cargarCarrusel(){
         for(i = 0; i<imagenes.length; i++){
             images.push(imagenes[i]['path']);
         }
-        /*const images = [
-            'src/img/assasins1.jpg',
-            'src/img/assasins2.jpg',
-            'src/img/assasins3.jpg',
-            'src/img/assasins4.jpg',
-            'src/img/assasins5.jpg',
-            'src/img/assasins6.jpg',
-            'src/img/assasins7.jpg',
-            'src/img/assasins8.jpg',
-        ];*/
         const intervalo_miliseg = 3000;
         let actual = 0;
         let imagen = document.querySelector('.carrusel-imagen');
