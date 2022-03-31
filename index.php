@@ -9,7 +9,7 @@
     <title>Acceso</title>
 </head>
 <?php
-    include "src/php/conexion.php"
+    include "src/php/conexion.php" // Conexion a la base de datos
 ?>
 <body>
     <header>

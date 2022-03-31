@@ -9,7 +9,11 @@ let botonCancelar = false;
 
 document.addEventListener('DOMContentLoaded',function(){
     let editarPais = false;
-     
+    
+    // Los input estan bloqueados, por lo que si se le da click en el boton de editar
+    // desbloquea el input asociado
+    // Y se crea un boton para cancelar la edicion del usuario
+
     botonNombre.onclick = function(e){
         e.preventDefault();
         const nombre = document.querySelector('.perfil-nombre');
@@ -23,7 +27,8 @@ document.addEventListener('DOMContentLoaded',function(){
         const nombre = document.querySelector('.perfil-contraseña');
         nombre.disabled = false;
         nombre.focus();
-
+        
+        // Cuando se edita la contraseña se crea otro input para confirmar contraseña
         const confirmar = document.querySelector('.editar-contraseña-confirmar');
         let label = document.createElement('LABEL');
         label.textContent = "Confirmar contraseña";
@@ -54,6 +59,8 @@ document.addEventListener('DOMContentLoaded',function(){
     }
     
     botonPais.onclick = function(e){
+        // Cuando se quiere editar el pais hace una consulta a la base 
+        // de datos para poder obtener los paises disponibles
         e.preventDefault();
         const nombre = document.querySelector('.perfil-pais');
         nombre.value = "";
@@ -77,8 +84,10 @@ document.addEventListener('DOMContentLoaded',function(){
         activarBoton();
     }
 
+    // Si se confirma la edicion, es decir, si se le da submit al formulario
+    // ajax manda los datos a php para ser actualizados en la base de datos
     $('#form-perfil').submit(function(e){
-        if(validar(e)){
+        if(validar(e)){ // Valida que todos los campos esten llenos
             e.preventDefault();
             activarCampos();
             $.ajax({
@@ -87,9 +96,11 @@ document.addEventListener('DOMContentLoaded',function(){
                 data:$(this).serialize(),
                 success: function(response){
                     if(response == "Correo invalido"){
-                        correoInvalido();
+                        correoInvalido(); // Valida que el correo sea correcta
                     }else{
                         window.open('perfil.php',"_self");
+                        // Si la validacion es correcta
+                        // recarga la pagina con los datos actualizados
                     }
                 }
             });
@@ -104,6 +115,7 @@ function validar(e){
     fecha = document.querySelector('.perfil-fecha').value;
     pais = document.querySelector('.perfil-pais').value;
     
+    // si algun campo esta vacio manda una alerta y detiene el evento
     if(
         nombre.length === 0  ||
         password.length === 0  ||
@@ -116,14 +128,14 @@ function validar(e){
         return false;
     }else if(editarContraseña){
         confirmarPass = document.querySelector('.perfil-contraseña-confirmar').value;
-        if (password !== confirmarPass){
-            e.preventDefault();
+        if (password !== confirmarPass){ // Si las contraseñas no coinciden
+            e.preventDefault(); // Crea una notifacion de que las contraseñas no coinciden
             const confirmar = document.querySelector(".editar-contraseña-confirmar");
             let aviso = document.createElement('P');
             aviso.textContent = " * Las contraseñas no coinciden";
             aviso.classList.add('confirmar-contraseña-error');
             confirmar.appendChild(aviso);
-            setTimeout(function(){
+            setTimeout(function(){ // La notificacion aparece despues de 3 segundos
                 confirmar.removeChild(aviso);
             }, 3000);
             return false;
@@ -132,6 +144,7 @@ function validar(e){
     return true;
 }
 
+// Crea un boton para cancelar la edicion del perfil de usuario
 function activarBoton(){
     let actualizar = document.querySelector('.boton-actualizar');
     actualizar.disabled = false;
@@ -146,10 +159,13 @@ function activarBoton(){
         
         cancelar.onclick = function(){
             window.open('perfil.php',"_self");
+            // Si se le da click en cancelar
+            // recarga la pagina con la informacion inicial
         }
     }
 }
 
+// Activa todos los campos del formulario para poder ser procesados por php
 function activarCampos(){
     const user = document.querySelector('.perfil-user');
     user.disabled = false;
@@ -165,13 +181,14 @@ function activarCampos(){
     pais.disabled = false;
 }
 
+// Si el correo es invalido crea una notifiacion de correo ivalido
 function correoInvalido(){
     let correo = document.querySelector(".correo");
     let aviso = document.createElement('P');
     aviso.textContent = " * Por favor ingrese un correo válido";
     aviso.classList.add('correo-error');
     correo.appendChild(aviso);
-    setTimeout(function(){
+    setTimeout(function(){ // La notificacion desaparece despues de 3 segundos
         correo.removeChild(aviso);
     }, 3000);
 }

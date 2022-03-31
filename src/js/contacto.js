@@ -2,22 +2,24 @@ const divTelefono = document.querySelector('.input-telefono');
 const divEmail = document.querySelector('.input-email');
 
 document.addEventListener('DOMContentLoaded',function(){
-   $('#form-contacto').submit(function(e){
-       if(validarDatos(e)){
+    
+    // Si se hace submit al formulario de contacto
+    $('#form-contacto').submit(function(e){ 
+       if(validarDatos(e)){  // Valida que los campos esten llenos
            e.preventDefault();
-           $.ajax({
+           $.ajax({ // ajax manda los datos a php
                 type: "POST",
                 url: 'src/php/validarMensaje.php',
                 data: $(this).serialize(),
                 success: function(response){
-                    if(response == "Numero invalido"){
+                    if(response == "Numero invalido"){ // Si el numero de telefono es invalido
                         numeroInvalido();
                     }else if(response == "Correo invalido"){
-                        correoInvalido();
+                        correoInvalido(); // Si el correo es invalido
                     }else if(response == "error"){
-                        error();
+                        error(); // Si ocurrio algun error en la consulta
                     }else{
-                        confirmar();
+                        confirmar(); // Si se envio exitosamente
                     }
                 }
            })
@@ -25,6 +27,8 @@ document.addEventListener('DOMContentLoaded',function(){
    }) 
 });
 
+// Revisa que todos los datos esten llenos
+// Si alguno esta vacio manda una alerta
 function validarDatos(e){
     nombre = document.getElementById("nombre").value;
     telefono = document.getElementById("telefono").value;
@@ -38,6 +42,7 @@ function validarDatos(e){
     return true;
 }
 
+// Si el numero de telefono es invalido crea una notificacion
 function numeroInvalido(){
     let div = document.querySelector('.campo-telefono');
     let aviso = document.createElement('P');
@@ -45,11 +50,14 @@ function numeroInvalido(){
     aviso.classList.add('error');
     div.appendChild(aviso);
 
+    // La notifiacion se elimina cuando se le da click al campo
+    // de telefono
     divTelefono.onclick = function(){
         div.removeChild(aviso);
     }
 }
 
+// Crea una notifiacion de correo invalido
 function correoInvalido(){
     let div = document.querySelector('.campo-email');
     let aviso = document.createElement('P');
@@ -57,12 +65,15 @@ function correoInvalido(){
     aviso.classList.add('error');
     div.appendChild(aviso);
 
+    // Elimina la notificacion cuando se le da click al campo
+    // de email
     divEmail.onclick = function(){
         div.removeChild(aviso);
     }
 }
 
-
+// Crea una notifiacion que indica que se envio correctamente el formulario
+// Reinicia los campos del formulario
 function confirmar(){
     const aviso = document.querySelector('.aviso');
     aviso.classList.add('aviso-correcto');
@@ -81,9 +92,10 @@ function confirmar(){
 
     setTimeout(function(){
         aviso.removeChild(mensaje);
-    }, 2000);
+    }, 2000); // La notificacion desaparece a los 2 segundos
 }
 
+// Crea una notificacion de error
 function error(){
     const aviso = document.querySelector('.aviso');
     aviso.classList.add('aviso-error');
@@ -92,6 +104,6 @@ function error(){
     aviso.appendChild(mensaje);
 
     setTimeout(function(){
-        aviso.removeChild(mensaje);
+        aviso.removeChild(mensaje); // Desaparece a los dos segundos
     }, 2000);
 }

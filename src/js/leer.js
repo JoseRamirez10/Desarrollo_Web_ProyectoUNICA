@@ -1,20 +1,20 @@
 document.addEventListener('DOMContentLoaded',function(){
-    
-    //prueba = "joz";
-    //localStorage.setItem('usuario', prueba);
 
     let usuario = localStorage.getItem('usuario');
-    $.ajax({
+    // Obtiene la variable de usuario que guarda el localStorage
+    $.ajax({ // Manda una solicitud por ajax
         type: "POST",
         url: "src/php/obtenerUsuario.php",
-        data: 'usuario='+usuario,
+        data: 'usuario='+usuario, // Manda el usuario loggeado
         success: function(response){
-            datos = JSON.parse(response);
-            imprimirDatos(datos);
+            datos = JSON.parse(response); // Obtiene los datos en json y los transforma
+            imprimirDatos(datos); // Imprime los datos en pantalla
         }
     });
 });
 
+// Manipula los datos del json y los imprime en los input correspondiente
+// para poder visualizar la informacion del perfil
 function imprimirDatos(datos){
     let usuario = document.querySelector('.perfil-user');
     usuario.value = datos[0]['usuario'];
