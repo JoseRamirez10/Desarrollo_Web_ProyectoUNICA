@@ -45,6 +45,7 @@
                 <div class="campo">
                     <label>Fecha de nacimiento</label>
                     <input class="entrada-fecha" type="date" name="fecha" placeholder="Fecha">
+                    <p class="formato"> * yyyy-mm-dd</p>
                 </div>
                 <div class="campo">
                     <label>Pais</label>

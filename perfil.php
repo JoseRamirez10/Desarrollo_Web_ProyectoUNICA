@@ -52,6 +52,7 @@
                     <label>Fecha de nacimiento</label>
                     <input class="perfil-fecha" type="date" name="fecha" disabled>
                     <button class="editar-fecha">Editar</button>
+                    <p class="perfil-formato-fecha"> * yyyy-mm-dd</p>
                 </div>
                 <div class="perfil-input">
                     <label>Pais</label>

@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded',function(){
                         localStorage.setItem('registro',registro);
                         window.open('index.php',"_self");
                         // Redirecciona a la pagina de index.php (acceso)
+                        
                     }
                 }
             });

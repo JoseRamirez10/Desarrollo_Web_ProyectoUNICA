@@ -9,7 +9,8 @@
     if(!(filter_var($email, FILTER_VALIDATE_EMAIL))){ // Se usa la funcion filter para validar el email
         die("Correo invalido"); // Si es email es invalido regresa "Correo invalido"
     }
-    $fecha = $_REQUEST['fecha'];
+    $fechaJs = $_REQUEST['fecha'];
+    $fecha = date('Y-m-d',strtotime($fechaJs));
 
     $pais = $_REQUEST['pais'];
     

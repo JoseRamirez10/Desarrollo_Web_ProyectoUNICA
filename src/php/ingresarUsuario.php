@@ -8,7 +8,8 @@
     if(!(filter_var($email, FILTER_VALIDATE_EMAIL))){ // Valida que el email sea correcto
         die("Correo invalido");
     }
-    $fecha = $_REQUEST['fecha'];
+    $fechaJs = $_REQUEST['fecha'];
+    $fecha = date('Y-m-d',strtotime($fechaJs));
 
     $pais = $_REQUEST['pais'];
 
